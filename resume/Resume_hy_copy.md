@@ -10,7 +10,9 @@
              <img src="assets/envelope-solid.svg" width="18px">
              hy572801400@163.com
          </span>
+
 ## <img src="assets/graduation-cap-solid.svg" width="30px">教育经历
+
 
 - 硕士，上海大学，信号与信息处理，2013.9—2016.4
 - 学士，天津工程师范学院，电子信息工程，2009.9—2013.7
@@ -29,12 +31,22 @@
    - 负责BootLoader阶段安全启动业务方案设计与研发
    - 负责安全启动业务自动化测试设计与开发
 
+## <img src="assets/tools-solid.svg" width="30px"> 技能清单
+
+- 编程语言: C++、Python
+- 中间件: Redis
+- 熟悉socket网络编程
+- 向量检索: Annoy、Faiss
+- 熟悉智能客服的知识库管理与运营
+- 熟悉智能客服在线、离线架构设计及常见业务场景
+- 熟悉机器学习及深度学习方法在NLP中的应用
+
 ## <img src="assets/project-diagram-solid.svg" width="30px"> 项目经历
 
 - **智能信息抽取---追一科技 			负责人 从0到1**
 - 项目描述: 从用户query中抽取业务字段关键信息, 形成可供SQL查询的格式
   - 项目职责: 
-  - 项目需求分析与拆解, 业务模块拆分
+    - 项目需求分析与拆解, 业务模块拆分
     - 项目排期及指导团队成员开发
     - 技术方案选型及核心模块开发
   - 项目业绩:
@@ -79,14 +91,3 @@
     - 人脸镜像校验方案优化前,Tee侧加载校验时间约为125ms  
     - 采取时间换空间优化方案后,Tee侧加载时间约为25ms,优化时间约为100ms
     - 方案缺陷:预留人脸镜像大小的内存空间;启动时间增加约为70~80ms.  
-
-## <img src="assets/tools-solid.svg" width="30px"> 技能清单
-
-- 编程语言: C++、Python
-- 中间件: Redis
-- 熟悉socket网络编程
-- 向量检索: Annoy、Faiss
-- 熟悉对话系统的知识库管理与运营, 在线及离线模块设计及常见的业务场景
-- 熟悉机器学习及深度学习方法在NLP中的应用
-- 熟悉Attention机制、Transform、BERT在NLP中的原理和应用
-
