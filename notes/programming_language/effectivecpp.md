@@ -9,35 +9,32 @@
   const出现星号右边,指针自身是常量
   const出现在在星号两边,指针和被指物都是常量
 
-
   除非有需要改动参数或者local对象,否则最好声明为const
   const成员函数为了保证成员函数可以作用在const对象上.(使得class接口容易理解, 使得操作const对象成为可能).
   利用mutable对非staic成员变量进行声明, 可以确保在const成员函数内进行变量修改.
   A.当const和non-const成员函数有着实质的等价实现时,可以利用non-const调用const
 
-
 3.确定对象被使用前已经被初始化
 	
+
 	永远在使用对象之前进行初始化.
 	A.对于无成员的内置类型需要手工完成.
-    B.对于除内置类型以外的东西,依赖于构造函数初始化.构造函数需要确保对象的每个成员都被初始化.
-    c++ 对象成员的初始化在进入构造函数本体之前.
-   
-    总是使用初始化列表,比赋值更高效
-
-    A.对内置类型进行手工初始化,C++不保证初始化他们
-    B.构造函数应该使用成员初始化列表而非在构造函数体内部使用赋值操作.初值列出的成员变量的次序应该同class中的声明次序相同
-    C.为了避免跨单元初始化问题,需要以local static代替non-local static对象.
-
+	B.对于除内置类型以外的东西,依赖于构造函数初始化.构造函数需要确保对象的每个成员都被初始化.
+	c++ 对象成员的初始化在进入构造函数本体之前.
+	   
+	总是使用初始化列表,比赋值更高效
+	
+	A.对内置类型进行手工初始化,C++不保证初始化他们
+	B.构造函数应该使用成员初始化列表而非在构造函数体内部使用赋值操作.初值列出的成员变量的次序应该同class中的声明次序相同
+	C.为了避免跨单元初始化问题,需要以local static代替non-local static对象.
 
 构造、析构与赋值运算
 
-4. 编译器可以暗自为class提供默认构造、拷贝构造、移动构造、copy赋值、移动赋值操作符及析构函数
+4.编译器可以暗自为class提供默认构造、拷贝构造、移动构造、copy赋值、移动赋值操作符及析构函数
 
 5.为了阻止copy构造和copy赋值可以将对应的成员函数声明为private且不实现 或者直接用delete标识符表明
 
 6.多态基类应该声明一个virtual析构函数,如果一个类存在virtual成员函数,就应该拥有一个virtual析构函数.如果class不是作为base class或者多态,则不应该有virtural析构函数.
-
 
 7.别让异常逃离析构
   A.析构函数不应该吐出异常,但是应该捕获异常
@@ -76,7 +73,6 @@
 17.以独立的语句将new对象置入智能指针
 	std::shared_ptr<T> ptr(new T);
 
-
 设计与声明
 18.让接口容易被使用,不易被误用.
 	行为一致的接口更容易被使用,以及与内置类型的行为兼容
@@ -98,7 +94,7 @@
 	}
 
 	在返回reference和object中抉择时,需要挑出行为正确的那个.
-
+	
 	A.禁止返回一个指向local stack的pointer或者reference
 	B.禁止返回一个指向heap-allocated的reference
 	C.禁止返回一个指向local static的pointer或者reference,因为可能需要多个这样的对象
@@ -179,12 +175,13 @@
 	4.non-virtual函数的目的是为了让derive classes继承该函数的接口及强制性实现
 
 35.考虑virtual函数以外的选择
-	1.使用non virtual interface方式~~Template Method设计模式的一种,以public non
-	-vritual成员函数包裹较低访问性的virtual函数(private或proteced)
-	2.将virtual函数替换为"函数指针成员变量" --- 这是一种strategy设计模式的表现形式
-	3.利用std::function 成员变量来替换virtual函数
-	4.将继承体系内的virtual函数转换为另一个继承体系的virtual函数~~strategy模式的传统实现手法
-	5.将机能从成员函数转移到class外部函数的缺点:非成员函数无法访问class non-public成员
+
+​	1.使用non virtual interface方式Template Method设计模式的一种,以public non
+​	-vritual成员函数包裹较低访问性的virtual函数(private或proteced)
+​	2.将virtual函数替换为"函数指针成员变量" --- 这是一种strategy设计模式的表现形式
+​	3.利用std::function 成员变量来替换virtual函数
+​	4.将继承体系内的virtual函数转换为另一个继承体系的virtual函数strategy模式的传统实现手法~~
+​	5.将机能从成员函数转移到class外部函数的缺点:非成员函数无法访问class non-public成员~~~~
 
 36.绝不重新定义继承而来的non-virtual函数
 
