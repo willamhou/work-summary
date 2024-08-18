@@ -72,7 +72,7 @@ int main() {
 
  * 成员变量
    	* 静态成员变量
-   	* 非静态成员变量
+   * 非静态成员变量
  * 成员函数
    	* 静态成员函数
     * 非静态成员函数
@@ -257,7 +257,7 @@ int main() {
 
   多重继承的虚函数表比较复杂~~一般而言
 
-  * 对于通过第一个基类指针访问时, 不需要调整thisz指针. 其virtual table slot需要放置真正的destructor地址
+  * 对于通过第一个基类指针访问时, 不需要调整this指针. 其virtual table slot需要放置真正的destructor地址
   * 对于通过第二个以后的基类指针访问时, 需要调整this指针. 其virtual table slot需要相关的thunk地址
 
 ~~~C++
